@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Fredoka+One|Special+Elite);
+@import url(http://fonts.googleapis.com/css?family=Eater|Special+Elite);
 body {
 	background-color: none;
 	background-image: url('../img/cthulhu.jpg');
@@ -10,37 +10,68 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .navbar-brand {
-	font-family: 'Fredoka One';
+	font-family: 'Eater';
 	text-align: center;
-	color: #ffaaff;
-	text-shadow: -2px 2px 3px #ff2d95;
+	color: #ffe6ff;
+}
+
+h1 {
 	-webkit-animation: neon1 2s ease-in-out infinite alternate;
 	-moz-animation: neon1 2s ease-in-out infinite alternate;
 	animation: neon1 2s ease-in-out infinite alternate
 }
 
-@keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #aaa,
-               0 0 20px  #fff,
-               0 0 30px  #fff,
-               0 0 40px  #ff0099,
-               0 0 70px  #ff0099,
-               0 0 80px  #ff0099,
-               0 0 100px #ff0099,
-               0 0 150px #ff0099;
-  }
-  to {
-    text-shadow: 0 0 5px #aaa,
-               0 0 10px #fff,
-               0 0 15px #fff,
-               0 0 20px #ff0099,
-               0 0 35px #ff0099,
-               0 0 40px #ff0099,
-               0 0 50px #ff0099,
-               0 0 75px #ff0099;
-  }
+	@keyframes neon1 {
+	  from {
+	    text-shadow: 0 0 10px #aaa,
+	               0 0 20px  #fff,
+	               0 0 30px  #fff,
+	               0 0 40px  #FDE181,
+	               0 0 70px  #FD9D4F,
+	               0 0 80px  #FD7303,
+	               0 0 100px #FD4403,
+	               0 0 150px #FD5039;
+	  }
+	  to {
+	    text-shadow: 0 0 5px #aaa,
+	               0 0 10px #fff,
+	               0 0 15px #fff,
+	               0 0 20px #FDE181,
+	               0 0 35px #FD9D4F,
+	               0 0 40px #FD7303,
+	               0 0 50px #FD4403,
+	               0 0 75px #FD5039;
+	  }
+	}
+
+h3 {
+	-webkit-animation: neon2 2s ease-in-out infinite alternate;
+	-moz-animation: neon2 2s ease-in-out infinite alternate;
+	animation: neon2 2s ease-in-out infinite alternate
 }
+@keyframes neon2 {
+	  from {
+	    text-shadow: 0 0 2.5px #aaa,
+	               0 0 10px  #fff,
+	               0 0 15px  #fff,
+	               0 0 20px  #FDE181,
+	               0 0 35px  #FD9D4F,
+	               0 0 40px  #FD7303,
+	               0 0 50px #FD4403,
+	               0 0 75px #FD5039;
+	  }
+	  to {
+	    text-shadow: 0 0 2.5px #aaa,
+	               0 0 5px #fff,
+	               0 0 7.5px #fff,
+	               0 0 10px #FDE181,
+	               0 0 17.5px #FD9D4F,
+	               0 0 20px #FD7303,
+	               0 0 25px #FD4403,
+	               0 0 37.5px #FD5039;
+	  }
+	}
+
 
 .starter-template {
 	padding-top: 15px;
