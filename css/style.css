@@ -1,0 +1,100 @@
+@import url(http://fonts.googleapis.com/css?family=Fredoka+One|Special+Elite);
+body {
+	background-color: none;
+	background-image: url('../img/cthulhu.jpg');
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+	font-family: 'Special Elite';
+	color: #fff;
+	padding-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+	font-family: 'Fredoka One';
+	text-align: center;
+	color: #ffaaff;
+	text-shadow: -2px 2px 3px #ff2d95;
+	-webkit-animation: neon1 2s ease-in-out infinite alternate;
+	-moz-animation: neon1 2s ease-in-out infinite alternate;
+	animation: neon1 2s ease-in-out infinite alternate
+}
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #aaa,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #ff0099,
+               0 0 70px  #ff0099,
+               0 0 80px  #ff0099,
+               0 0 100px #ff0099,
+               0 0 150px #ff0099;
+  }
+  to {
+    text-shadow: 0 0 5px #aaa,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #ff0099,
+               0 0 35px #ff0099,
+               0 0 40px #ff0099,
+               0 0 50px #ff0099,
+               0 0 75px #ff0099;
+  }
+}
+
+.starter-template {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+	.starter-template p {
+		margin-top: 10px;
+		margin-bottom: 10px
+	}
+
+a {
+	color: #ffff99;
+}
+
+a.list-group-item {
+	text-align: center;
+	color: #fff;
+	background-color: rgba(0,0,0,0);
+	border-color: rgba(0,0,0,0);
+	border-radius: 4px;
+}
+
+a.list-group-item:hover {
+	color: #fff;
+	background-color: rgba(0,0,0,0.25);
+	border-color: #fff;
+}
+
+a:hover{
+	color: white; 
+	-webkit-animation: neon3 1s ease-in-out infinite alternate;
+	-moz-animation: neon3 1s ease-in-out infinite alternate;
+	animation: neon3 1s ease-in-out infinite alternate; 
+}
+
+@keyframes neon3 {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #ffff99,
+               0 0 70px  #ffff99,
+               0 0 80px  #ffff99,
+               0 0 100px #ffff99,
+               0 0 150px #ffff99;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #ffff99,
+               0 0 35px #ffff99,
+               0 0 40px #ffff99,
+               0 0 50px #ffff99,
+               0 0 75px #ffff99;
+  }
+}
