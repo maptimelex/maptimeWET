@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>maptimeWET - Lexington Map Slider</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+
+<script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script> 
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jquery.beforeafter-map-0.11.js"></script>
+
+
+<style>
+  body { margin:0; padding:0;
+}
+  #map, #before, #after { position:absolute; top:0; bottom:0; width:100%; }
+  #after.leaflet-container {
+    background-color: rgba(255,0,0,0);
+  }
+
+</style>
+</head>
+<body>
+<style>
+</style>
+<div id='map'>
+  <div id="before" class="map"></div>
+  <div id="after" class="map"></div>
+
+</div>
+
+<script>
+
+L.mapbox.accessToken = 'pk.eyJ1IjoibWFwdGltZWxleCIsImEiOiJjYzZlMDA1Y2U2NzcwNzRiNTZmYWU0NWMwYmM3ZjdjNyJ9.Eou-9RCWPA-kAEDMc8pJZQ';
+
+var center = [38.046374, -84.497041];
+var zoom = 14;
+var minZoom = 12;
+var maxZoom = 19
+var before = L.map('before', {
+  attributionControl: false,
+  inertia: false,
+  minZoom: minZoom,
+  maxZoom: maxZoom
+}).setView(center, zoom);
+var after = L.map('after', {
+  inertia: false,
+  minZoom: minZoom
+}).setView(center, zoom);
+
+var mbsat1 = L.tileLayer('http://{s}.tiles.mapbox.com/v3/maptimelex.nclgdjjm/{z}/{x}/{y}.png');
+var mbsat2 = L.tileLayer('http://{s}.tiles.mapbox.com/v3/maptimelex.nclgdjjm/{z}/{x}/{y}.png');
+var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+mbsat1.addTo(before);
+mbsat2.addTo(after);
+
+var oldest = L.tileLayer('http://mapwarper.net/maps/tile/10505/{z}/{x}/{y}.png', {
+      zIndex: 2,
+      attribution: '<a href="http://mapwarper.net/maps/10571" target="_blank">Map Warper</a>'
+    });
+
+var layers = {
+      "Lexington 1855": oldest,
+      "Lexington 1877": L.tileLayer('http://mapwarper.net/maps/tile/10585/{z}/{x}/{y}.png', {
+      zIndex: 2,
+      attribution: '<a href="http://mapwarper.net/maps/10585" target="_blank">Map Warper</a>'
+    }),
+  };
+
+var overlay = oldest.addTo(after);
+L.control.layers(layers, null, {
+  collapsed: false
+}).addTo(after);
+$('#map').beforeAfter(before, after, {
+  showFullLinks: false
+});
+</script>
+</body>
+</html>
